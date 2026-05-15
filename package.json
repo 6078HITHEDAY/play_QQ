@@ -1,0 +1,9 @@
+{
+  "name": "play_QQ-plugin",
+  "version": "1.0.0",
+  "description": "TRSS-Yunzai 插件 —— play_QQ",
+  "type": "module",
+  "main": "index.js",
+  "author": "myxcat",
+  "license": "MIT"
+}
