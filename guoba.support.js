@@ -15,7 +15,6 @@ const defaults = {
   // LLM 连接
   llmApiKey: '',
   llmBaseUrl: 'https://api.openai.com/v1',
-  llmCustomBaseUrl: '',
   llmModel: 'gpt-3.5-turbo',
 
   // LLM 参数
@@ -129,48 +128,16 @@ export function supportGuoba () {
         {
           field: 'llmBaseUrl',
           label: 'API 地址',
-          bottomHelpMessage: '选择 API 提供商，选"自定义"时请在下方填写地址',
-          component: 'Select',
-          componentProps: {
-            options: [
-              { value: 'https://api.openai.com/v1', label: 'OpenAI' },
-              { value: 'https://api.deepseek.com/v1', label: 'DeepSeek' },
-              { value: 'https://dashscope.aliyuncs.com/compatible-mode/v1', label: '通义千问' },
-              { value: 'https://open.bigmodel.cn/api/paas/v4', label: '智谱 GLM' },
-              { value: 'https://api.moonshot.cn/v1', label: 'Moonshot' },
-              { value: '__custom__', label: '自定义...' },
-            ],
-          },
-        },
-        {
-          field: 'llmCustomBaseUrl',
-          label: '自定义 API 地址',
-          bottomHelpMessage: '当上方选择"自定义"时，在此填写完整的 API 地址',
+          bottomHelpMessage: 'OpenAI 兼容 API 地址，需包含 /v1 路径',
           component: 'Input',
-          componentProps: { placeholder: 'https://your-api.example.com/v1' },
+          componentProps: { placeholder: 'https://api.openai.com/v1' },
         },
         {
           field: 'llmModel',
           label: '模型',
-          bottomHelpMessage: '选择模型，注意需与 API 提供商匹配',
-          component: 'Select',
-          componentProps: {
-            options: [
-              { value: 'gpt-3.5-turbo', label: 'GPT-3.5 Turbo' },
-              { value: 'gpt-4o', label: 'GPT-4o' },
-              { value: 'gpt-4.1-nano', label: 'GPT-4.1 Nano' },
-              { value: 'gpt-4.1-mini', label: 'GPT-4.1 Mini' },
-              { value: 'gpt-4.1', label: 'GPT-4.1' },
-              { value: 'deepseek-chat', label: 'DeepSeek Chat (V3)' },
-              { value: 'deepseek-reasoner', label: 'DeepSeek Reasoner (R1)' },
-              { value: 'qwen-turbo', label: '通义千问 Turbo' },
-              { value: 'qwen-plus', label: '通义千问 Plus' },
-              { value: 'qwen-max', label: '通义千问 Max' },
-              { value: 'glm-4-flash', label: 'GLM-4 Flash' },
-              { value: 'glm-4', label: 'GLM-4' },
-              { value: 'moonshot-v1-8k', label: 'Moonshot v1 (8K)' },
-            ],
-          },
+          bottomHelpMessage: '模型名称，如 gpt-3.5-turbo、deepseek-chat',
+          component: 'Input',
+          componentProps: { placeholder: 'gpt-3.5-turbo' },
         },
 
         // ======== 三、LLM 参数 ========
