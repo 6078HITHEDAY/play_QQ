@@ -1,4 +1,3 @@
-import plugin from '../../../lib/plugin.js'
 import { config } from '../lib/config.js'
 import { narrateStep, checkEndCondition, generateSummary } from '../lib/llm.js'
 import * as scenario from '../lib/scenario.js'
